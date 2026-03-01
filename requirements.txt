@@ -21,10 +21,11 @@ geopy
 gradio
 streamlit
 protobuf
-transformers
+transformers<5.0.0
 datasets
 tokenizers
 #deep learning
 torch
 torchvision
 tensorflow
+tf-keras

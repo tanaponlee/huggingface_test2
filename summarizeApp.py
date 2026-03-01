@@ -10,9 +10,18 @@ import gradio as gr
 #    revision="a4f8f3e",
 #)
 
-#load model and tokenizer from disk
-model = AutoModelForSeq2SeqLM.from_pretrained("summarizeApp")
-tokenizer = AutoTokenizer.from_pretrained("summarizeApp")
+# #load model and tokenizer from disk
+# model = AutoModelForSeq2SeqLM.from_pretrained("summarizeApp")
+# tokenizer = AutoTokenizer.from_pretrained("summarizeApp")
+
+
+download model
+# from transformers import pipeline
+# pipe = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+
+
+tokenizer = AutoTokenizer.from_pretrained("sshleifer/distilbart-cnn-12-6")
+model = AutoModelForSeq2SeqLM.from_pretrained("sshleifer/distilbart-cnn-12-6")
 
 def predict(prompt):
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
